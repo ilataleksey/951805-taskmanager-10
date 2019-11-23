@@ -1,4 +1,4 @@
-import {createSiteMenuTemplate} from './components/site-menu.js';
+import {createMenuTemplate} from './components/menu.js';
 import {createFilterTemplate} from './components/filter.js';
 import {createBoardTemplate} from './components/board.js';
 import {createTaskTemplate} from './components/task.js';
@@ -14,7 +14,7 @@ const render = (container, template, place = `beforeend`) => {
 const siteMainElement = document.querySelector(`.main`);
 const siteHeaderElement = siteMainElement.querySelector(`.main__control`);
 
-render(siteHeaderElement, createSiteMenuTemplate());
+render(siteHeaderElement, createMenuTemplate());
 render(siteMainElement, createFilterTemplate());
 render(siteMainElement, createBoardTemplate());
 
