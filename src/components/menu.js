@@ -1,4 +1,4 @@
-export const createSiteMenuTemplate = () => (
+export const createMenuTemplate = () => (
   `<section class="control__btn-wrap">
     <input
       type="radio"
