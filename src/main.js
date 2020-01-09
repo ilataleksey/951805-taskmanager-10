@@ -1,15 +1,9 @@
 import MenuComponent from './components/menu.js';
 import FilterComponent from './components/filter.js';
 import BoardComponent from './components/board.js';
-import SortComponent from './components/sort.js';
-import TasksComponent from './components/tasks.js';
-import NoTasksComponent from './components/no-tasks.js';
-import TaskComponent from './components/task.js';
-import TaskEditComponent from './components/task-edit.js';
-import LoadMoreButtonComponent from './components/load-more-button.js';
 import {generateTasks} from './mock/task.js';
 import {generateFilters} from './mock/filter.js';
-import {render, remove, replace, RenderPosition} from './utils/render.js';
+import {render, RenderPosition} from './utils/render.js';
 
 const TASK_COUNT = 22;
 const SHOWING_TASK_COUNT_ON_START = 8;
