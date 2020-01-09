@@ -1,6 +1,6 @@
 import AbstractComponent from './abstract-component.js';
 import {COLORS, DAYS, MONTH_NAMES} from '../const.js';
-import {formatTime} from '../utils.js';
+import {formatTime} from '../utils/common.js';
 
 const createColorsMarkup = (colors, currentColor) => {
   return colors
@@ -185,5 +185,10 @@ export default class TasksEdit extends AbstractComponent {
 
   getTemplate() {
     return createTaskEditTemplate(this._tasks);
+  }
+
+  setSubmitHandler(handler) {
+    this.getElement().querySelector(`form`)
+      .addEventListener(`submit`, handler);
   }
 }
