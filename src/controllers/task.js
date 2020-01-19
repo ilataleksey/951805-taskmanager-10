@@ -46,7 +46,7 @@ export default class TaskController {
     });
 
     this._taskEditComponent.setSubmitHandler((evt) => {
-      evt.preventDefaulte();
+      evt.preventDefault();
       this._replaceEditToTask();
     });
 
