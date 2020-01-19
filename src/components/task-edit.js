@@ -200,7 +200,7 @@ export default class TasksEdit extends AbstractSmartComponent {
   }
 
   recoveryListeners() {
-    this._subscribeOnEvents(this._submitHandler);
+    this.setSubmitHandler(this._submitHandler);
     this._subscribeOnEvents();
   }
 
