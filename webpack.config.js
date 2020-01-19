@@ -1,5 +1,5 @@
 const path = require(`path`);
-const MomentLocalesPlugin = require(`,o,emt-locales-webpack-plaugin`);
+const MomentLocalesPlugin = require(`moment-locales-webpack-plugin`);
 
 module.exports = {
   mode: `development`, // Режим сборки
@@ -23,7 +23,7 @@ module.exports = {
       localesToKeep: [`es-us`],
     }),
   ],
-  modules: {
+  module: {
     rules: [
       {
         test: /\.css$/i,
