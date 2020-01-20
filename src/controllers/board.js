@@ -80,15 +80,15 @@ export default class BoardController {
   }
 
   _onDataChange(taskController, oldData, newData) {
-    const index = this._tasks.findIndex((it) => it === oldData);
+    const taskIndex = this._tasks.findIndex((it) => it === oldData);
 
-    if (index === -1) {
+    if (taskIndex === -1) {
       return;
     }
 
-    this._tasks = [].concat(this._tasks.slice(0, index), newData, this._tasks.slice(index + 1));
+    this._tasks = [].concat(this._tasks.slice(0, taskIndex), newData, this._tasks.slice(taskIndex + 1));
 
-    taskController.render(this._tasks[index]);
+    taskController.render(this._tasks[taskIndex]);
   }
 
   _onViewChange() {
