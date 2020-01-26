@@ -29,4 +29,5 @@ render(siteMainElement, statisticsComponent, RenderPosition.BEFOREEND);
 
 const boardController = new BoardController(boardComponent, tasksModel);
 
+statisticsComponent.hide();
 boardController.render();
