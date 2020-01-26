@@ -326,6 +326,8 @@ export default class Statistics extends AbstractSmartComponent {
     this.rerender(this._tasks, this._dateFrom, this._dateTo);
   }
 
+  recoveryListeners() {}
+
   rerender(tasks, dateFrom, dateTo) {
     this._tasks = tasks;
     this._dateFrom = dateFrom;
