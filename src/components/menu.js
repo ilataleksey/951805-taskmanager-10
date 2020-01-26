@@ -43,4 +43,12 @@ export default class citeMenu extends AbstractComponent {
   getTemplate() {
     return createMenuTemplate();
   }
+
+  setActiveItem(menuItem) {
+    const item = this.getElement().querySelector(`#${menuItem}`);
+
+    if (item) {
+      item.checked = true;
+    }
+  }
 }
