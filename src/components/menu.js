@@ -51,4 +51,16 @@ export default class citeMenu extends AbstractComponent {
       item.checked = true;
     }
   }
+
+  setOnChange(handler) {
+    this.getElement().addEventListener(`change`, (evt) => {
+      if (evt.target.tagName !== `INPUT`) {
+        return;
+      }
+
+      const menuItem = evt.target.id;
+
+      handler(menuItem);
+    });
+  }
 }
