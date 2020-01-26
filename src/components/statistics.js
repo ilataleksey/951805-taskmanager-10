@@ -1,5 +1,20 @@
 import AbstractSmartComponent from './abstract-smart-component.js';
 
+const Color = {
+  BLACK: `black`,
+  BLUE: `blue`,
+  GREEN: `green`,
+  PINK: `pink`,
+  YELLOW: `yellow`,
+};
+
+const ColorValue = {
+  [Color.BLACK]: `#000000`,
+  [Color.BLUE]: `#0c5cdd`,
+  [Color.GREEN]: `#31b55c`,
+  [Color.PINK]: `#ff3cb9`,
+  [Color.YELLOW]: `#ffe125`,
+};
 
 const createStatisticsTemplate = ({tasks, dateFrom, dateTo}) => {
   const placeholder = createPlaceholder(dateFrom, dateTo);
