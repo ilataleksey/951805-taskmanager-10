@@ -319,4 +319,20 @@ export default class Statistics extends AbstractSmartComponent {
   getTemplate() {
     return createStatisticsTemplate({tasks: this._tasks.getTasks(), dateFrom: this._dateFrom, dateTo: this._dateTo});
   }
+
+  _renderCharts() {
+    const element = this.getElement();
+
+    this._applyFlatpickr(this.getElement().querySelector(`.statistic__period-input`));
+
+    const daysCtx = element.querySelector(`.statistic__days`);
+    const tagsCtx = element.querySelector(`.statistic__tags`);
+    const colorsCtx = element.querySelector(`.statistic__colors`);
+
+    this._resetCharts();
+
+    this._daysChart = renderDaysChart(daysCtx, this._tasks.getTasks(), this._dateFrom, this._dateTo);
+    this._tagsChart = renderTagsChart(tagsCtx, this._tasks.getTasks());
+    this._colorsChart = renderColorsChart(colorsCtx, this._tasks.getTasks());
+  }
 }
