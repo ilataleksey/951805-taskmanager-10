@@ -1,10 +1,10 @@
-export const COLORS = [
-  `black`,
-  `yellow`,
-  `blue`,
-  `green`,
-  `pink`
-];
+export const COLOR = {
+  BLACK: `black`,
+  YELLOW: `yellow`,
+  BLUE: `blue`,
+  GREEN: `green`,
+  PINK: `pink`
+};
 
 export const DAYS = [
   `mo`,
