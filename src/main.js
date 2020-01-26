@@ -1,4 +1,4 @@
-import MenuComponent from './components/menu.js';
+import MenuComponent, {MenuItem} from './components/menu.js';
 import FilterController from './controllers/filter.js';
 import BoardComponent from './components/board.js';
 import BoardController from './controllers/board.js';
@@ -31,3 +31,22 @@ const boardController = new BoardController(boardComponent, tasksModel);
 
 statisticsComponent.hide();
 boardController.render();
+
+menuComponent.setOnChange((menuItem) => {
+  switch (menuItem) {
+    case MenuItem.NEW_TASK:
+      menuComponent.setActiveItem(MenuItem.TASKS);
+      statisticsComponent.hide();
+      boardController.show();
+      boardController.createTask();
+      break;
+    case MenuItem.STATISTICS:
+      boardController.hide();
+      statisticsComponent.show();
+      break;
+    case MenuItem.TASKS:
+      statisticsComponent.hide();
+      boardController.show();
+      break;
+  }
+});
