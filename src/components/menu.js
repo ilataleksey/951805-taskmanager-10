@@ -1,5 +1,11 @@
 import AbstractComponent from './abstract-component.js';
 
+export const MenuItem = {
+  NEW_TASK: `control__new-task`,
+  STATISTICS: `control__statistic`,
+  TASKS: `control__task`,
+};
+
 const createMenuTemplate = () => {
   return (
     `<section class="control__btn-wrap">
