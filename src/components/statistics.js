@@ -68,6 +68,13 @@ const renderColorsChart = (colorsCtx, tasks) => {
   return new window.Chart(colorsCtx, {
     plugins: [window.ChartDataLabels],
     type: `pie`,
+    data: {
+      labels: colors,
+      datasets: [{
+        data: colors.map((color) => calcUniqCountColor(tasks, color)),
+        backgroundColor: colors.map((color) => ColorValue[color])
+      }]
+    },
     options: {
       plugins: {
         datalabels: {
