@@ -17,9 +17,9 @@ const renderTasks = (taskListElement, tasks, onDataChange, onViewChange) => {
 };
 
 export default class BoardController {
-  constructor(container, taskModel) {
+  constructor(container, tasksModel) {
     this._container = container;
-    this._taskModel = taskModel;
+    this._tasksModel = tasksModel;
 
     this._showedTaskControllers = [];
     this._showingTasksCount = SHOWING_TASKS_COUNT_ON_START;
@@ -75,7 +75,7 @@ export default class BoardController {
   _renderLoadMoreButton() {
     remove(this._loadMoreButtonComponent);
 
-    if (this._showingTasksCount >= this._taskModel.getTasks().length) {
+    if (this._showingTasksCount >= this._tasksModel.getTasks().length) {
       return;
     }
 
