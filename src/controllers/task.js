@@ -90,7 +90,7 @@ export default class TaskController {
           remove(oldTaskEditComponent);
         }
         document.addEventListener(`keydown`, this._onEscKeyDown);
-        render(this._container, this._taskEditComponent, RenderPosition.AFTERBEGIN);
+        render(this._container, this._taskEditComponent, RenderPosition.AFTERBEGINING);
         break;
     }
   }
