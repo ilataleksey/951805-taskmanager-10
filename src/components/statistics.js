@@ -335,4 +335,21 @@ export default class Statistics extends AbstractSmartComponent {
     this._tagsChart = renderTagsChart(tagsCtx, this._tasks.getTasks());
     this._colorsChart = renderColorsChart(colorsCtx, this._tasks.getTasks());
   }
+
+  _resetCharts() {
+    if (this._daysChart) {
+      this._daysChart.destroy();
+      this._daysChart = null;
+    }
+
+    if (this._tagsChart) {
+      this._tagsChart.destroy();
+      this._tagsChart = null;
+    }
+
+    if (this._colorsChart) {
+      this._colorsChart.destroy();
+      this._colorsChart = null;
+    }
+  }
 }
