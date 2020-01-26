@@ -12,13 +12,20 @@ const TASK_COUNT = 22;
 const siteMainElement = document.querySelector(`.main`);
 const siteHeaderElement = siteMainElement.querySelector(`.main__control`);
 const menuComponent = new MenuComponent();
-const statisticsComponent = new StatisticsComponent();
 
 render(siteHeaderElement, menuComponent, RenderPosition.BEFOREEND);
 
 const tasks = generateTasks(TASK_COUNT);
 const tasksModel = new TasksModel();
 tasksModel.setTasks(tasks);
+
+const dateTo = new Date();
+const dateFrom = (() => {
+  const d = new Date(dateTo);
+  d.setDate(d.getDate() - 7);
+  return d;
+})();
+const statisticsComponent = new StatisticsComponent({tasks: tasksModel, dateFrom, dateTo});
 
 const filterController = new FilterController(siteMainElement, tasksModel);
 filterController.render();
