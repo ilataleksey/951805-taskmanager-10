@@ -61,7 +61,9 @@ const calculateBetweenDates = (from, to) => {
 };
 
 const renderColorsChart = (colorsCtx, tasks) => {
-
+  const colors = tasks
+    .map((task) => task.color)
+    .filter(getUniqItems);
 };
 
 const createStatisticsTemplate = ({tasks, dateFrom, dateTo}) => {
