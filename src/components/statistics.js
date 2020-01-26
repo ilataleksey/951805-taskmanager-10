@@ -352,4 +352,22 @@ export default class Statistics extends AbstractSmartComponent {
       this._colorsChart = null;
     }
   }
+
+  _applyFlatpickr(element) {
+    if (this._flatpickr) {
+      this._flatpickr.destroy();
+    }
+
+    this._flatpickr = window.flatpickr(element, {
+      altInput: true,
+      allowInput: true,
+      defaultDate: [this._dateFrom, this._dateTo],
+      mode: `range`,
+      onChange: (dates) => {
+        if (dates.length === 2) {
+          this.rerender(this._tasks, dates[0], dates[1]);
+        }
+      }
+    });
+  }
 }
