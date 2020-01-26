@@ -14,14 +14,6 @@ const siteHeaderElement = siteMainElement.querySelector(`.main__control`);
 const menuComponent = new MenuComponent();
 const statisticsComponent = new StatisticsComponent();
 
-// Быстрое решение для подписки на клик по кнопке.
-// Это противоречит нашей архитектуре работы с DOM-элементами, но это временное решение.
-// Совсем скоро мы создадим полноценный компонент для работы с меню.
-menuComponent.getElement().querySelector(`.control__label--new-task`)
-    .addEventListener(`click`, () => {
-      boardController.createTask();
-    });
-
 render(siteHeaderElement, menuComponent, RenderPosition.BEFOREEND);
 
 const tasks = generateTasks(TASK_COUNT);
