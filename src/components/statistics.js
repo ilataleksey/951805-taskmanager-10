@@ -300,7 +300,23 @@ const createStatisticsTemplate = ({tasks, dateFrom, dateTo}) => {
 };
 
 export default class Statistics extends AbstractSmartComponent {
+  constructor({tasks, dateFrom, dateTo}) {
+    super();
+
+    this._tasks = tasks;
+    this._dateFrom = dateFrom;
+    this._dateTo = dateTo;
+
+    this._daysChart = null;
+    this._tagsChart = null;
+    this._colorsChart = null;
+
+    this._applyFlatpickr(this.getElement().querySelector(`.statistic__period-input`));
+
+    this._renderCharts();
+  }
+
   getTemplate() {
-    return createStatisticsTemplate();
+    return createStatisticsTemplate({tasks: this._tasks.getTasks(), dateFrom: this._dateFrom, dateTo: this._dateTo});
   }
 }
