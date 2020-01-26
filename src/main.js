@@ -2,6 +2,7 @@ import MenuComponent from './components/menu.js';
 import FilterComponent from './components/filter.js';
 import BoardComponent from './components/board.js';
 import BoardController from './controllers/board.js';
+import TaskModel from './models/tasks.js';
 import {generateTasks} from './mock/task.js';
 import {generateFilters} from './mock/filter.js';
 import {render, RenderPosition} from './utils/render.js';
@@ -20,6 +21,8 @@ const boardComponent = new BoardComponent();
 render(siteMainElement, boardComponent, RenderPosition.BEFOREEND);
 
 const tasks = generateTasks(TASK_COUNT);
+const taskModel = new TaskModel();
+taskModel.setTasks(tasks);
 
 const boardController = new BoardController(boardComponent);
 
