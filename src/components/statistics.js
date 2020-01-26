@@ -320,6 +320,16 @@ export default class Statistics extends AbstractSmartComponent {
     return createStatisticsTemplate({tasks: this._tasks.getTasks(), dateFrom: this._dateFrom, dateTo: this._dateTo});
   }
 
+  rerender(tasks, dateFrom, dateTo) {
+    this._tasks = tasks;
+    this._dateFrom = dateFrom;
+    this._dateTo = dateTo;
+
+    super.rerender();
+
+    this._renderCharts();
+  }
+
   _renderCharts() {
     const element = this.getElement();
 
